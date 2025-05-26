@@ -45,9 +45,12 @@ public class RVInputPage {
 
 
 
-        WebElement rvHref  = driver.findElement(By.linkText(rvInput));
+        WebElement rvHref = wait.until(ExpectedConditions.elementToBeClickable(By.linkText(rvInput)));
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", rvHref);
         System.out.println("RV HREF SUCCESS");
+        //WebElement rvHref  = driver.findElement(By.linkText(rvInput));
+        //((JavascriptExecutor) driver).executeScript("arguments[0].click();", rvHref);
+        //System.out.println("RV HREF SUCCESS");
 
         WebElement modifyButton = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input[type='button'][value='Modify date/time']")));
         //WebElement modifyButton = driver.findElement(By.cssSelector"input[type='button'][value='Modify date/time']"));
